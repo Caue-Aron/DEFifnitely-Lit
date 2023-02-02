@@ -1,5 +1,5 @@
 mesh: "/assets/tucunare/tucunare.glb"
-material: "/definitely-lit/toon_shading/toon_shading.material"
+material: "/definitely-lit/smooth_shading/smooth_shading.material"
 textures: "/assets/tucunare/tucunare-3231176057.jpg"
 textures: "/DEFinitely-Lit/toon_shading/img_light/regular.png"
 skeleton: ""

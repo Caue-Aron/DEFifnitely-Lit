@@ -30,7 +30,7 @@ components {
 }
 components {
   id: "sun"
-  component: "/DEFinitely-Lit/light sources/sun/sun.script"
+  component: "/definitely-lit/light sources/sun/sun.script"
   position {
     x: 0.0
     y: 0.0

@@ -1,4 +1,4 @@
-lights = require 'assets.light sources.lights_mod'
+lights = require 'definitely-lit.light sources.lights_mod'
 
 go.property('active', false)
 go.property('color', vmath.vector4(1, 1, 1, 1))

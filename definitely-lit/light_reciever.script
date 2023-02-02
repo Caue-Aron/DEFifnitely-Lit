@@ -1,4 +1,4 @@
-lights = require 'assets.light sources.lights_mod'
+lights = require 'definitely-lit.light sources.lights_mod'
 
 go.property('sun_or_lamps', true)
 go.property('sun_and_lamps', false)

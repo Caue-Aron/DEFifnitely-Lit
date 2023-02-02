@@ -1,5 +1,5 @@
-mesh: "/DEFinitely-Lit/light sources/light_source_quad.glb"
-material: "/DEFinitely-Lit/light sources/material/light_source.material"
+mesh: "/definitely-lit/light sources/light_source_quad.glb"
+material: "/definitely-lit/light sources/material/light_source.material"
 textures: "/DEFinitely-Lit/light sources/base lamp/lamp.png"
 skeleton: ""
 animations: ""

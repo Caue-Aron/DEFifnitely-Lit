@@ -1,7 +1,7 @@
 name: "model"
 tags: "model"
-vertex_program: "/DEFinitely-Lit/toon_shading/toon_shading.vp"
-fragment_program: "/DEFinitely-Lit/toon_shading/toon_shading.fp"
+vertex_program: "/definitely-lit/toon_shading/toon_shading.vp"
+fragment_program: "/definitely-lit/toon_shading/toon_shading.fp"
 vertex_space: VERTEX_SPACE_LOCAL
 vertex_constants {
   name: "mtx_worldview"

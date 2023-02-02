@@ -1,7 +1,7 @@
 name: "model"
 tags: "light_source"
-vertex_program: "/DEFinitely-Lit/light sources/material/light_source.vp"
-fragment_program: "/DEFinitely-Lit/light sources/material/light_source.fp"
+vertex_program: "/definitely-lit/light sources/material/light_source.vp"
+fragment_program: "/definitely-lit/light sources/material/light_source.fp"
 vertex_space: VERTEX_SPACE_LOCAL
 vertex_constants {
   name: "mtx_worldview"

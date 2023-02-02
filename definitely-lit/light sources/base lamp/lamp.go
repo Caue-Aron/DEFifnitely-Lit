@@ -15,7 +15,7 @@ components {
 }
 components {
   id: "light_source"
-  component: "/DEFinitely-Lit/light sources/base lamp/lamp.model"
+  component: "/definitely-lit/light sources/base lamp/lamp.model"
   position {
     x: 0.0
     y: 0.0

@@ -1,6 +1,6 @@
 components {
   id: "light_source"
-  component: "/DEFinitely-Lit/light sources/sun/sun.model"
+  component: "/definitely-lit/light sources/sun/sun.model"
   position {
     x: 0.0
     y: 0.0
@@ -15,7 +15,7 @@ components {
 }
 components {
   id: "arrow"
-  component: "/DEFinitely-Lit/light sources/sun/arrow.model"
+  component: "/definitely-lit/light sources/sun/arrow.model"
   position {
     x: 0.0
     y: 0.0

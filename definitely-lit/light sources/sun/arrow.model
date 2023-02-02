@@ -1,0 +1,6 @@
+mesh: "/DEFinitely-Lit/light sources/sun/arrow.glb"
+material: "/DEFinitely-Lit/light sources/sun/material/arrow.material"
+skeleton: ""
+animations: ""
+default_animation: ""
+name: "unnamed"

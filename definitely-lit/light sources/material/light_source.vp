@@ -1,0 +1,25 @@
+attribute highp vec4 position;
+attribute mediump vec2 texcoord0;
+
+uniform mediump mat4 mtx_worldview;
+uniform mediump mat4 mtx_proj;
+uniform mediump mat4 mtx_world;
+uniform mediump mat4 mtx_view;
+
+varying mediump vec2 var_texcoord0;
+
+void main()
+{
+    var_texcoord0 = texcoord0;
+    
+    mat4 original_matrix = mtx_worldview;
+
+    mat4 model_view;
+    model_view[0] = vec4(length(original_matrix[0].xyz), 0.0, 0.0, 0.0);
+    model_view[1] = vec4(0.0, length(original_matrix[1].xyz), 0.0, 0.0);
+    model_view[2] = vec4(0.0, 0.0, length(original_matrix[2].xyz), 0.0);
+    model_view[3] = original_matrix[3];
+
+    vec4 p = model_view * position;
+    gl_Position = mtx_proj * p;
+}

@@ -1,0 +1,225 @@
+name: "main"
+instances {
+  id: "camera"
+  prototype: "/rendercam/camera.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 23.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "lamp"
+  prototype: "/DEFinitely-Lit/light sources/base lamp/lamp.go"
+  position {
+    x: 5.0
+    y: 0.0
+    z: -3.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "light_source_script"
+    properties {
+      id: "color"
+      value: "1.0, 0.0, 0.0, 5.0"
+      type: PROPERTY_TYPE_VECTOR4
+    }
+    properties {
+      id: "lit"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "lamp1"
+  prototype: "/DEFinitely-Lit/light sources/base lamp/lamp.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 6.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "light_source_script"
+    properties {
+      id: "color"
+      value: "1.0, 1.0, 1.0, 1.0"
+      type: PROPERTY_TYPE_VECTOR4
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "lamp2"
+  prototype: "/DEFinitely-Lit/light sources/base lamp/lamp.go"
+  position {
+    x: -5.393
+    y: 0.0
+    z: -2.81
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "light_source_script"
+    properties {
+      id: "color"
+      value: "0.0, 0.0, 1.0, 1.0"
+      type: PROPERTY_TYPE_VECTOR4
+    }
+    properties {
+      id: "lit"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "sun"
+  prototype: "/DEFinitely-Lit/light sources/sun/sun.go"
+  position {
+    x: 0.407
+    y: 7.096
+    z: 22.879
+  }
+  rotation {
+    x: 0.3350038
+    y: -0.7563534
+    z: 0.54626846
+    w: -0.13150212
+  }
+  component_properties {
+    id: "sun"
+    properties {
+      id: "active"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+collection_instances {
+  id: "tucunare"
+  collection: "/assets/tucunare/tucunare.collection"
+  position {
+    x: -1.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  instance_properties {
+    id: "go"
+    properties {
+      id: "light_reciever"
+      properties {
+        id: "sun_or_lamps"
+        value: "false"
+        type: PROPERTY_TYPE_BOOLEAN
+      }
+      properties {
+        id: "sun_and_lamps"
+        value: "false"
+        type: PROPERTY_TYPE_BOOLEAN
+      }
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "go"
+  children: "lamp"
+  children: "lamp1"
+  children: "lamp2"
+  data: "components {\n"
+  "  id: \"rotation\"\n"
+  "  component: \"/assets/rotation.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"speed\"\n"
+  "    value: \"40.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  property_decls {\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}

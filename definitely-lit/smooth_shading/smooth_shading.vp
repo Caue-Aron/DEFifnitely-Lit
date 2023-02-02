@@ -1,0 +1,48 @@
+#define LIGHT_COUNT 8
+
+attribute highp   vec4 position; // this is the position in local space of the vertex
+attribute mediump vec2 texcoord0; // texture coordinate
+attribute mediump vec3 normal; // the normal of the vertex
+
+uniform mediump mat4 mtx_worldview; // the multiplication of world * view
+uniform mediump mat4 mtx_view; // view matrix
+uniform mediump mat4 mtx_proj; // projection matrix
+uniform mediump mat4 mtx_normal; // used to calculate normals in Defold (still not used to how this works...)
+
+uniform mediump vec4 light_pos[LIGHT_COUNT];
+varying mediump vec4 var_light_pos[LIGHT_COUNT];
+
+uniform mediump vec4 light_color[LIGHT_COUNT];
+varying mediump vec4 var_light_color[LIGHT_COUNT];
+
+varying mediump vec4 var_light_dir;
+uniform mediump vec4 light_dir;
+
+varying mediump vec3 var_normal;
+varying highp vec4 frag_pos;
+varying mediump vec2 var_texcoord; // coordinates about the texture coordinates to be send to fragment shader
+
+void main()
+{
+    var_texcoord = texcoord0;
+
+    vec4 p = mtx_worldview * vec4(position.xyz, 1.0);
+    frag_pos = p;
+
+    var_light_dir = -normalize(vec4(mat3(mtx_view) * light_dir.xyz, 1.0));
+    var_light_dir.w = light_dir.w;
+
+    for(int i = 0; i < LIGHT_COUNT; i++)
+    {
+        if(light_color[i].w != 0)
+        {
+            var_light_pos[i] = mtx_view * vec4(light_pos[i].xyz, 1.0);
+            var_light_pos[i].a = light_pos[i].a;
+        }
+    }
+    var_light_color = light_color;
+
+    var_normal = normalize((mtx_normal * vec4(normal, 0.0)).xyz);
+
+    gl_Position = mtx_proj * p;
+}

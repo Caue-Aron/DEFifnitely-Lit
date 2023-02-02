@@ -1,0 +1,32 @@
+key_trigger {
+  input: KEY_W
+  action: "forward_cam"
+}
+key_trigger {
+  input: KEY_S
+  action: "backward_cam"
+}
+key_trigger {
+  input: KEY_A
+  action: "left_cam"
+}
+key_trigger {
+  input: KEY_D
+  action: "right_cam"
+}
+key_trigger {
+  input: KEY_LSHIFT
+  action: "down_cam"
+}
+key_trigger {
+  input: KEY_SPACE
+  action: "up_cam"
+}
+key_trigger {
+  input: KEY_F
+  action: "detach_cam"
+}
+mouse_trigger {
+  input: MOUSE_BUTTON_1
+  action: "touch"
+}

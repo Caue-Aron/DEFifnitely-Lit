@@ -1,0 +1,12 @@
+go.property('rotation', vmath.vector3(0, 1, 1))
+go.property("speed", 10.0)
+
+function update(self, dt)
+  local t = os.clock()
+  local yrot = 0
+
+  yrot = t * self.speed * self.rotation.y
+  zrot = t * self.speed * self.rotation.z
+
+  go.set('.', 'euler', vmath.vector3(0, yrot, zrot))
+end

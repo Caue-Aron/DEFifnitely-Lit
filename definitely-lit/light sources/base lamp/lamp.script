@@ -1,0 +1,24 @@
+lights = require 'assets.light sources.lights_mod'
+
+go.property('color', vmath.vector4(1, 1, 1, 1))
+go.property('lit', true)
+
+function init(self)
+  go.set("#light_source", "tint", self.color)
+
+  if self.lit then
+    lights:new_lamp(go.get_id())
+    lights:update_lamp_position  (go.get_id(), go.get_world_position())
+    lights:update_lamp_color     (go.get_id(), go.get("#light_source", "tint"))
+  else
+    msg.post('.', hash('disable'))
+    self.color.w = 0
+  end
+end
+
+function update(self)
+  if self.lit then
+    lights:update_lamp_position  (go.get_id(), go.get_world_position())
+    lights:update_lamp_color     (go.get_id(), go.get("#light_source", "tint"))
+  end
+end

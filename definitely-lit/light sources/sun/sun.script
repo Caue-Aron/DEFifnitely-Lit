@@ -1,0 +1,31 @@
+lights = require 'assets.light sources.lights_mod'
+
+go.property('active', false)
+go.property('color', vmath.vector4(1, 1, 1, 1))
+
+function init(self)
+  go.set("#light_source", "tint", self.color)
+  
+  if self.active then
+    lights:new_sun(go.get_id())
+    lights:update_sun_rotation(go.get_rotation())
+    lights:update_sun_color(go.get("#light_source", "tint"))
+  else
+    msg.post('.', 'disable')
+  end
+end
+
+function update(self)
+  if self.active then
+    lights:update_sun_rotation(go.get_rotation())
+    lights:update_sun_color(go.get("#light_source", "tint"))
+  end
+end
+
+function on_message(self, message_id, message)
+  if message_id == hash'enable' then
+    self.active = true
+  elseif message_id == hash'disable' then
+    self.active = false
+  end
+end

@@ -8,10 +8,10 @@ instances {
     z: 13.0
   }
   rotation {
-    x: 2.3432602E-17
-    y: 0.9238795
-    z: -0.38268343
-    w: 5.6571306E-17
+    x: 2.1198927E-17
+    y: 0.938159
+    z: -0.34620476
+    w: 5.744567E-17
   }
   component_properties {
     id: "sun"
@@ -90,6 +90,11 @@ instances {
   component_properties {
     id: "light_reciever"
     properties {
+      id: "sun_or_lamps"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
       id: "ambient"
       value: "1.0, 1.0, 1.0, 0.35"
       type: PROPERTY_TYPE_VECTOR4
@@ -115,3 +120,41 @@ instances {
   }
 }
 scale_along_z: 0
+embedded_instances {
+  id: "rotation_defold"
+  children: "defold"
+  data: "components {\n"
+  "  id: \"rotation_defold_parent\"\n"
+  "  component: \"/assets/3D defold logo/rotation_defold_parent.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "  property_decls {\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}

@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /main/Defold (literally).collectionc
+main_collection = /assets/3D defold logo/Defold (literally).collectionc
 render = /rendercam/rendercam.renderc
 
 [script]

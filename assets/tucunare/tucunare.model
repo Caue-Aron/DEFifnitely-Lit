@@ -1,7 +1,7 @@
 mesh: "/assets/tucunare/tucunare.glb"
 material: "/definitely-lit/toon_shading/toon_shading.material"
 textures: "/assets/tucunare/tucunare-3231176057.jpg"
-textures: "/definitely-lit/img_light/day.png"
+textures: "/definitely-lit/img_light/day2.png"
 skeleton: ""
 animations: ""
 default_animation: ""

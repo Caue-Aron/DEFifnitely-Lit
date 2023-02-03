@@ -42,4 +42,14 @@ components {
     z: 0.0
     w: 1.0
   }
+  properties {
+    id: "active"
+    value: "true"
+    type: PROPERTY_TYPE_BOOLEAN
+  }
+  properties {
+    id: "intensity"
+    value: "4.0"
+    type: PROPERTY_TYPE_NUMBER
+  }
 }

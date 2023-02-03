@@ -19,10 +19,6 @@ varying mediump vec4 var_light_dir;
 varying mediump vec3 var_color;
 uniform mediump vec4 light_dir;
 
-uniform vec4 light_options;
-uniform vec4 ambient_options;
-varying float ambient_strength;
-
 varying mediump vec3 var_normal;
 varying highp vec4 frag_pos;
 varying mediump vec2 var_tex_coord; // coordinates about the texture coordinates to be send to fragment shader
@@ -30,12 +26,12 @@ varying mediump vec2 var_tex_coord; // coordinates about the texture coordinates
 void main()
 {
     var_tex_coord = texcoord0;
-    ambient_strength = ambient_options.x;
 
     vec4 p = mtx_worldview * vec4(position.xyz, 1.0);
     frag_pos = p;
 
     var_light_dir = -normalize(vec4(mat3(mtx_view) * light_dir.xyz, 1.0));
+    var_light_dir.a = light_dir.a;
 
     for(int i = 0; i < LIGHT_COUNT; i++)
     {

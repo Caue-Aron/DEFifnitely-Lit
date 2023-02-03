@@ -23,9 +23,9 @@ instances {
   id: "lamp"
   prototype: "/definitely-lit/light sources/base lamp/lamp.go"
   position {
-    x: 5.0
+    x: 7.0
     y: 0.0
-    z: -3.0
+    z: 3.0
   }
   rotation {
     x: 0.0
@@ -43,9 +43,9 @@ instances {
   id: "lamp1"
   prototype: "/definitely-lit/light sources/base lamp/lamp.go"
   position {
-    x: 0.0
+    x: 2.0
     y: 0.0
-    z: 6.0
+    z: 12.0
   }
   rotation {
     x: 0.0
@@ -65,7 +65,7 @@ instances {
   position {
     x: -5.393
     y: 0.0
-    z: -2.81
+    z: 3.19
   }
   rotation {
     x: 0.0
@@ -103,9 +103,9 @@ collection_instances {
   id: "tucunare"
   collection: "/assets/tucunare/tucunare.collection"
   position {
-    x: -1.0
+    x: 1.0
     y: 0.0
-    z: 0.0
+    z: 6.0
   }
   rotation {
     x: 0.0

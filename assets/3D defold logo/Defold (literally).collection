@@ -95,6 +95,11 @@ instances {
       type: PROPERTY_TYPE_BOOLEAN
     }
     properties {
+      id: "sun_and_lamps"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
       id: "ambient"
       value: "1.0, 1.0, 1.0, 0.35"
       type: PROPERTY_TYPE_VECTOR4

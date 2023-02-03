@@ -2,22 +2,17 @@ lights = require 'definitely-lit.light sources.lights_mod'
 
 go.property('sun_or_lamps', true)
 go.property('sun_and_lamps', false)
-go.property('tint', vmath.vector4(1, 1, 1, 1))
+go.property('ambient', vmath.vector4(0.1, 0.1, 0.2, 1))
 
 local sun_direction = vmath.vector3(0,0,1)
+local sun_intensity = 1
 
 function bool_to_number(v)
   return v and 1 or 0
 end
 
 local function init_light_options(self, mesh)
-  -- go.set(mesh, "light_options", vmath.vector4(
-  --   bool_to_number(self.sun), 
-  --   0,
-  --   1, -- should always be 1
-  --   0.15
-  -- ))
-  go.set(mesh, "tint", self.tint)
+  go.set(mesh, "ambient", self.ambient)
 end
 
 function init(self)
@@ -27,7 +22,7 @@ end
 local function sun_update(lights, mesh)
   if lights.sources.sun.id then
     sun_direction = vmath.rotate(lights.sources.sun.rotation, vmath.vector3(0, 0, 1))
-    go.set(mesh, "light_dir", vmath.vector4(sun_direction.x, sun_direction.y, sun_direction.z, 1))
+    go.set(mesh, "light_dir", vmath.vector4(sun_direction.x, sun_direction.y, sun_direction.z, lights.sources.sun.intensity))
     go.set(mesh, "light_dir_color", lights.sources.sun.color)
   end
 end

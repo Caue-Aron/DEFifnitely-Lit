@@ -1,6 +1,7 @@
 lights = require 'definitely-lit.light sources.lights_mod'
 
 go.property('active', false)
+go.property('intensity', 1)
 go.property('color', vmath.vector4(1, 1, 1, 1))
 
 function init(self)
@@ -19,6 +20,7 @@ function update(self)
   if self.active then
     lights:update_sun_rotation(go.get_rotation())
     lights:update_sun_color(go.get("#light_source", "tint"))
+    lights:update_sun_intensity(self.intensity)
   end
 end
 

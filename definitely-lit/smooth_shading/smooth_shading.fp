@@ -32,7 +32,7 @@ void main()
             result += light_point_calculation(var_light_color[i].rgb, var_light_pos[i], var_normal, frag_pos.xyz);
     }
     
-    gl_FragColor = vec4((result * tint.xyz) * tint.w, 1);
+    gl_FragColor = vec4(result, 1);
 }
 
 vec3 light_dir_calculation(vec3 light_color, vec4 light_dir, vec3 normal)

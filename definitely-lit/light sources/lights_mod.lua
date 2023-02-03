@@ -47,6 +47,10 @@ function lights:update_sun_rotation(rotation)
   self.sources.sun.rotation = rotation
 end
 
+function lights:update_sun_intensity(intensity)
+  self.sources.sun.intensity = intensity
+end
+
 
 
 

@@ -44,7 +44,7 @@ void main()
 vec3 light_dir_calculation(vec3 light_color, vec3 light_dir, vec3 normal)
 {
     float nol = max(dot(normal, light_dir), 0.0);
-    vec3 diffuse_light = texture(zatoon, vec2(nol, 0)).rgb * light_color;
+    vec3 diffuse_light = texture(zatoon, vec2(nol, 0)).rgb
     vec3 albedo = texture(tex0, var_tex_coord).xyz;
     return diffuse_light * albedo;
 }
@@ -53,11 +53,12 @@ vec3 light_point_calculation(vec3 light_color, vec3 light_pos, vec3 normal, vec3
 {    
     vec3 light_dir = normalize(light_pos - frag_pos);
     float nol = max(dot(normal, light_dir), 0.0);
-    vec3 diffuse_light = texture(zatoon, vec2(nol, 0)).rgb * light_color;
+    vec3 diffuse_light = texture(zatoon, vec2(nol, 0)).rgb
     vec3 albedo = texture(tex0, var_tex_coord).xyz;
 
     float light_distance = length(light_pos - frag_pos);
     float attenuation = 1.0 / (1 + 0.9 * light_distance + 0.0032 * (light_distance * light_distance));
+
 
     diffuse_light *= attenuation;
  

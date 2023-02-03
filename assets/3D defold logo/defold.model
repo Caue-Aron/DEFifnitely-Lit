@@ -1,0 +1,8 @@
+mesh: "/assets/3D defold logo/Defold.glb"
+material: "/definitely-lit/smooth_shading/smooth_shading.material"
+textures: "/assets/3D defold logo/defold.png"
+textures: "/definitely-lit/img_light/regular.png"
+skeleton: ""
+animations: ""
+default_animation: ""
+name: "unnamed"

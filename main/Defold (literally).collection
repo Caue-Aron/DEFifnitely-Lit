@@ -1,0 +1,117 @@
+name: "default"
+instances {
+  id: "sun"
+  prototype: "/definitely-lit/light sources/sun/sun.go"
+  position {
+    x: 0.0
+    y: 8.0
+    z: 13.0
+  }
+  rotation {
+    x: 2.3432602E-17
+    y: 0.9238795
+    z: -0.38268343
+    w: 5.6571306E-17
+  }
+  component_properties {
+    id: "sun"
+    properties {
+      id: "active"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "intensity"
+      value: "1.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "color"
+      value: "1.0, 1.0, 1.0, 1.0"
+      type: PROPERTY_TYPE_VECTOR4
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "camera"
+  prototype: "/rendercam/camera.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 12.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "script"
+    properties {
+      id: "orthographic"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  component_properties {
+    id: "move_cam"
+    properties {
+      id: "attach_cam"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "defold"
+  prototype: "/assets/3D defold logo/defold.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "light_reciever"
+    properties {
+      id: "ambient"
+      value: "1.0, 1.0, 1.0, 0.35"
+      type: PROPERTY_TYPE_VECTOR4
+    }
+  }
+  component_properties {
+    id: "defold_logo"
+    properties {
+      id: "position"
+      value: "0.0, 100.0, 0.0"
+      type: PROPERTY_TYPE_VECTOR3
+    }
+    properties {
+      id: "scale"
+      value: "50.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+scale_along_z: 0

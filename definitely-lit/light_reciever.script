@@ -1,7 +1,7 @@
 lights = require 'definitely-lit.light sources.lights_mod'
 
-go.property('sun_or_lamps', true)
-go.property('sun_and_lamps', false)
+go.property('sun', true)
+go.property('lamps', false)
 go.property('ambient', vmath.vector4(0.1, 0.1, 0.2, 1))
 
 local sun_direction = vmath.vector3(0,0,1)
@@ -40,18 +40,13 @@ local function lamps_update(lights, mesh)
 end
 
 function update(self, dt)
-  if self.sun_and_lamps then
+  if self.sun then
     sun_update(lights, '#lit_mesh')
-    lamps_update(lights, '#lit_mesh')
-
   else
-    if self.sun_or_lamps then
-      sun_update(lights, '#lit_mesh')
+    go.set('#lit_mesh', "light_dir_color", vmath.vector4(0))
+  end
 
-    else
-      lamps_update(lights, '#lit_mesh')
-      go.set('#lit_mesh', "light_dir_color", vmath.vector4(0))
-
-    end
+  if self.lamps then
+    lamps_update(lights, '#lit_mesh')
   end
 end

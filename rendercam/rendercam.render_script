@@ -19,6 +19,7 @@ function init(self)
 	self.text_pred = render.predicate({"text"})
 	self.model_pred = render.predicate({"model"})
 	self.particle_pred = render.predicate({"particle"})
+	self.lights = render.predicate({"light_source"})
 
 	self.clear_color = vmath.vector4(0)
 	self.clear_color.x = sys.get_config("render.clear_color_red", 0)
@@ -64,6 +65,7 @@ function update(self)
 	render.enable_state(render.STATE_DEPTH_TEST)
 	render.set_depth_mask(true)
 	render.draw(self.model_pred)
+  -- render.draw(self.lights)
 
 	-- Debug rendering - physics debug, draw_line
 	render.disable_state(render.STATE_DEPTH_TEST)

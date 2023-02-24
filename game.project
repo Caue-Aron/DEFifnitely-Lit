@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /assets/3D defold logo/Defold (literally).collectionc
+main_collection = /main/main.collectionc
 render = /rendercam/rendercam.renderc
 
 [script]
@@ -14,4 +14,7 @@ input_method = HiddenInputField
 
 [project]
 title = DEFinitely-Lit
+
+[library]
+include_dirs = definitely-lit
 

@@ -6,7 +6,6 @@ function update(self, dt)
   local yrot = 0
 
   yrot = t * self.speed * self.rotation.y
-  zrot = t * self.speed * self.rotation.z
 
-  go.set('.', 'euler', vmath.vector3(0, yrot, zrot))
+  go.set('.', 'euler', vmath.vector3(0, yrot, 0))
 end

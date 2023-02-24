@@ -23,15 +23,28 @@ instances {
   id: "lamp"
   prototype: "/definitely-lit/light sources/base lamp/lamp.go"
   position {
-    x: 7.0
+    x: 3.904
     y: 0.0
-    z: 3.0
+    z: -2.644
   }
   rotation {
     x: 0.0
     y: 0.0
     z: 0.0
     w: 1.0
+  }
+  component_properties {
+    id: "light_source_script"
+    properties {
+      id: "color"
+      value: "1.0, 0.0, 0.0, 1.0"
+      type: PROPERTY_TYPE_VECTOR4
+    }
+    properties {
+      id: "lit"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
   }
   scale3 {
     x: 1.0
@@ -43,15 +56,28 @@ instances {
   id: "lamp1"
   prototype: "/definitely-lit/light sources/base lamp/lamp.go"
   position {
-    x: 2.0
+    x: -0.729
     y: 0.0
-    z: 12.0
+    z: 5.995
   }
   rotation {
     x: 0.0
     y: 0.0
     z: 0.0
     w: 1.0
+  }
+  component_properties {
+    id: "light_source_script"
+    properties {
+      id: "color"
+      value: "0.0, 1.0, 0.0, 1.0"
+      type: PROPERTY_TYPE_VECTOR4
+    }
+    properties {
+      id: "lit"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
   }
   scale3 {
     x: 1.0
@@ -65,13 +91,26 @@ instances {
   position {
     x: -5.393
     y: 0.0
-    z: 3.19
+    z: -1.81
   }
   rotation {
     x: 0.0
     y: 0.0
     z: 0.0
     w: 1.0
+  }
+  component_properties {
+    id: "light_source_script"
+    properties {
+      id: "color"
+      value: "0.0, 0.0, 1.0, 1.0"
+      type: PROPERTY_TYPE_VECTOR4
+    }
+    properties {
+      id: "lit"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
   }
   scale3 {
     x: 1.0
@@ -93,6 +132,14 @@ instances {
     z: 0.54626846
     w: -0.13150212
   }
+  component_properties {
+    id: "sun"
+    properties {
+      id: "intensity"
+      value: "1.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
   scale3 {
     x: 1.0
     y: 1.0
@@ -105,13 +152,34 @@ collection_instances {
   position {
     x: 1.0
     y: 0.0
-    z: 6.0
+    z: 0.0
   }
   rotation {
     x: 0.0
     y: 0.0
     z: 0.0
     w: 1.0
+  }
+  instance_properties {
+    id: "go"
+    properties {
+      id: "light_reciever"
+      properties {
+        id: "sun"
+        value: "false"
+        type: PROPERTY_TYPE_BOOLEAN
+      }
+      properties {
+        id: "lamps"
+        value: "true"
+        type: PROPERTY_TYPE_BOOLEAN
+      }
+      properties {
+        id: "ambient"
+        value: "0.1, 0.1, 0.2, 0.35"
+        type: PROPERTY_TYPE_VECTOR4
+      }
+    }
   }
   scale3 {
     x: 1.0
@@ -141,7 +209,7 @@ embedded_instances {
   "  }\n"
   "  properties {\n"
   "    id: \"speed\"\n"
-  "    value: \"40.0\"\n"
+  "    value: \"60.0\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "  property_decls {\n"
@@ -151,13 +219,13 @@ embedded_instances {
   position {
     x: 0.0
     y: 0.0
-    z: 0.0
+    z: -1.0
   }
   rotation {
     x: 0.0
-    y: 0.0
+    y: 0.86681205
     z: 0.0
-    w: 1.0
+    w: 0.498635
   }
   scale3 {
     x: 1.0

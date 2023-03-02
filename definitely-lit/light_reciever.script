@@ -16,7 +16,7 @@ local function init_light_options(self, mesh)
 end
 
 function init(self)
-  init_light_options(self, '#lit_mesh')
+  pcall(init_light_options, self, '#lit_mesh')
 end
 
 local function sun_update(lights, mesh)
@@ -40,13 +40,15 @@ local function lamps_update(lights, mesh)
 end
 
 function update(self, dt)
-  if self.sun then
-    sun_update(lights, '#lit_mesh')
-  else
-    go.set('#lit_mesh', "light_dir_color", vmath.vector4(0))
-  end
-
-  if self.lamps then
-    lamps_update(lights, '#lit_mesh')
-  end
+  pcall(function ()
+    if self.sun then
+      sun_update(lights, '#lit_mesh')
+    else
+      go.set('#lit_mesh', "light_dir_color", vmath.vector4(0))
+    end
+  
+    if self.lamps then
+      lamps_update(lights, '#lit_mesh')
+    end
+  end)
 end

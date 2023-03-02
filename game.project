@@ -14,6 +14,7 @@ input_method = HiddenInputField
 
 [project]
 title = DEFinitely-Lit
+dependencies#0 = https://github.com/Caue-Aron/DEFifnitely-Lit/archive/refs/tags/1.1.zip
 
 [library]
 include_dirs = definitely-lit

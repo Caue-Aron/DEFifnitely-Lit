@@ -5,7 +5,6 @@ go.property('lamps', false)
 go.property('ambient', vmath.vector4(0.1, 0.1, 0.2, 1))
 
 local sun_direction = vmath.vector3(0,0,1)
-local sun_intensity = 4
 
 function bool_to_number(v)
   return v and 1 or 0

@@ -1,17 +1,99 @@
-name: "main"
+name: "game_world_collection"
 instances {
-  id: "camera"
+  id: "sun"
+  prototype: "/definitely-lit/light sources/sun/sun.go"
+  position {
+    x: 0.0
+    y: 8.0
+    z: 13.0
+  }
+  rotation {
+    x: 1.8056598E-17
+    y: 0.95553225
+    z: -0.29488662
+    w: 5.8509476E-17
+  }
+  component_properties {
+    id: "sun"
+    properties {
+      id: "intensity"
+      value: "1.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "color"
+      value: "1.0, 1.0, 1.0, 1.0"
+      type: PROPERTY_TYPE_VECTOR4
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "scene_cam"
   prototype: "/rendercam/camera.go"
   position {
     x: 0.0
     y: 0.0
-    z: 23.0
+    z: 12.0
   }
   rotation {
     x: 0.0
     y: 0.0
     z: 0.0
     w: 1.0
+  }
+  component_properties {
+    id: "script"
+    properties {
+      id: "orthographic"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  component_properties {
+    id: "move_cam"
+    properties {
+      id: "attach_cam"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+instances {
+  id: "defold"
+  prototype: "/assets/3D defold logo/defold.go"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  component_properties {
+    id: "defold_logo"
+    properties {
+      id: "position"
+      value: "0.0, 100.0, 0.0"
+      type: PROPERTY_TYPE_VECTOR3
+    }
+    properties {
+      id: "scale"
+      value: "50.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
   }
   scale3 {
     x: 1.0
@@ -23,9 +105,9 @@ instances {
   id: "lamp"
   prototype: "/definitely-lit/light sources/base lamp/lamp.go"
   position {
-    x: 3.904
+    x: 0.0
     y: 0.0
-    z: -2.644
+    z: 6.0
   }
   rotation {
     x: 0.0
@@ -40,11 +122,6 @@ instances {
       value: "1.0, 0.0, 0.0, 1.0"
       type: PROPERTY_TYPE_VECTOR4
     }
-    properties {
-      id: "lit"
-      value: "true"
-      type: PROPERTY_TYPE_BOOLEAN
-    }
   }
   scale3 {
     x: 1.0
@@ -56,9 +133,9 @@ instances {
   id: "lamp1"
   prototype: "/definitely-lit/light sources/base lamp/lamp.go"
   position {
-    x: -0.729
+    x: -6.0
     y: 0.0
-    z: 5.995
+    z: -3.0
   }
   rotation {
     x: 0.0
@@ -73,11 +150,6 @@ instances {
       value: "0.0, 1.0, 0.0, 1.0"
       type: PROPERTY_TYPE_VECTOR4
     }
-    properties {
-      id: "lit"
-      value: "true"
-      type: PROPERTY_TYPE_BOOLEAN
-    }
   }
   scale3 {
     x: 1.0
@@ -89,9 +161,9 @@ instances {
   id: "lamp2"
   prototype: "/definitely-lit/light sources/base lamp/lamp.go"
   position {
-    x: -5.393
+    x: 6.0
     y: 0.0
-    z: -1.81
+    z: -3.0
   }
   rotation {
     x: 0.0
@@ -106,80 +178,6 @@ instances {
       value: "0.0, 0.0, 1.0, 1.0"
       type: PROPERTY_TYPE_VECTOR4
     }
-    properties {
-      id: "lit"
-      value: "true"
-      type: PROPERTY_TYPE_BOOLEAN
-    }
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-instances {
-  id: "sun"
-  prototype: "/definitely-lit/light sources/sun/sun.go"
-  position {
-    x: 0.407
-    y: 7.096
-    z: 22.879
-  }
-  rotation {
-    x: 0.3350038
-    y: -0.7563534
-    z: 0.54626846
-    w: -0.13150212
-  }
-  component_properties {
-    id: "sun"
-    properties {
-      id: "intensity"
-      value: "1.0"
-      type: PROPERTY_TYPE_NUMBER
-    }
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
-    z: 1.0
-  }
-}
-collection_instances {
-  id: "tucunare"
-  collection: "/assets/tucunare/tucunare.collection"
-  position {
-    x: 1.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  instance_properties {
-    id: "go"
-    properties {
-      id: "light_reciever"
-      properties {
-        id: "sun"
-        value: "false"
-        type: PROPERTY_TYPE_BOOLEAN
-      }
-      properties {
-        id: "lamps"
-        value: "true"
-        type: PROPERTY_TYPE_BOOLEAN
-      }
-      properties {
-        id: "ambient"
-        value: "0.1, 0.1, 0.2, 0.35"
-        type: PROPERTY_TYPE_VECTOR4
-      }
-    }
   }
   scale3 {
     x: 1.0
@@ -189,7 +187,45 @@ collection_instances {
 }
 scale_along_z: 0
 embedded_instances {
-  id: "go"
+  id: "rotation_defold"
+  children: "defold"
+  data: "components {\n"
+  "  id: \"rotation_defold_parent\"\n"
+  "  component: \"/assets/3D defold logo/rotation_defold_parent.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "  property_decls {\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "lamps"
   children: "lamp"
   children: "lamp1"
   children: "lamp2"
@@ -207,11 +243,6 @@ embedded_instances {
   "    z: 0.0\n"
   "    w: 1.0\n"
   "  }\n"
-  "  properties {\n"
-  "    id: \"speed\"\n"
-  "    value: \"60.0\"\n"
-  "    type: PROPERTY_TYPE_NUMBER\n"
-  "  }\n"
   "  property_decls {\n"
   "  }\n"
   "}\n"
@@ -219,13 +250,13 @@ embedded_instances {
   position {
     x: 0.0
     y: 0.0
-    z: -1.0
+    z: 0.0
   }
   rotation {
     x: 0.0
-    y: 0.86681205
+    y: 0.0
     z: 0.0
-    w: 0.498635
+    w: 1.0
   }
   scale3 {
     x: 1.0

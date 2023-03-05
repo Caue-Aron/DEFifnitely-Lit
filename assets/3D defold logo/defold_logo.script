@@ -1,0 +1,11 @@
+go.property('position', vmath.vector3())
+go.property('scale', 1)
+
+function init(self)
+  go.set_scale(vmath.vector3(self.scale))
+  go.set_position(self.position)
+
+  go.animate('.', 'euler.y', go.PLAYBACK_ONCE_FORWARD, 45, 2, 1, 1, function ()
+    msg.post('/rotation_defold#rotation_defold_parent', hash'do_action')
+  end)
+end
